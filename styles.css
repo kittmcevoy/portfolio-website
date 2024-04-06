@@ -53,6 +53,11 @@
     text-align: center;
 }
 
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
 .center-text-main {
     text-align: center;
     margin-top: 50vh; /* Adjusted to make space for the taskbar */
@@ -64,11 +69,30 @@
 }
 
 .around{
+    display: flex;
 	padding: 2rem;
-	display: flex;
-	justify-content: space-around;
 }
 
-.max-width{
-	max-width: 30vw;
+
+
+ /* For desktop */
+@media (min-width: 768px) {
+    .around{
+        justify-content: space-around;
+    }
+    .box-width{
+        padding: 2rem;
+        max-width: 30vw;
+    }
+}
+
+/* For mobile */
+@media (max-width: 767px) {
+    .around{
+        width: 100%;
+        flex-direction: column;
+    }
+    .box-width{
+        max-width: 100%;
+    }
 }
